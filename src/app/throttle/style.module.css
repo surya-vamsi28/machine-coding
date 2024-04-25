@@ -1,0 +1,23 @@
+.wrapper {
+     padding: 0 40px;
+     width: 100%;
+     margin-top: 300px;
+}
+
+.button {
+     padding: 10px 20px;
+}
+.textWrapper {
+     margin-top: 30px;
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+}
+
+.description{
+     font-size: 20px;
+}
+
+.textEntered {
+     font-size: 20px;
+}

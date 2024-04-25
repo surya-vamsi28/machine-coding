@@ -1,0 +1,25 @@
+.wrapper {
+     padding: 0 40px;
+     width: 100%;
+     margin-top: 300px;
+}
+
+.textBox {
+     width: 100%;
+     height: 50px;
+     font-size: 30px;
+}
+.textWrapper {
+     margin-top: 30px;
+     display: flex;
+     flex-direction: row;
+     gap: 15px;
+}
+
+.description{
+     font-size: 20px;
+}
+
+.textEntered {
+     font-size: 20px;
+}
