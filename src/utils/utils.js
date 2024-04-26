@@ -29,3 +29,13 @@ export const throttleMaker = (func, limit) => {
     }
   };
 };
+
+export const removeElementFromArray = (array, index) => {
+  let arr = []
+  for (let i=0; i < array.length; i++) {
+    if (i !== index) {
+      arr.push(array[i])
+    }
+  }
+  return arr;
+}

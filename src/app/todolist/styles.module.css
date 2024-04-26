@@ -1,0 +1,76 @@
+.pageWrapper {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.todoWrapper {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.inputWrapper {
+    display: flex;
+    gap: 18px;
+}
+
+.input {
+    width: 300px;
+    background: #000;
+    border: 1px solid white;
+    border-radius: 8px;
+    height: 45px;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.addIcon {
+    width: 45px;
+    height: 45px;
+}
+
+.remainingWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
+
+.remainingListItem {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.remainingItem {
+    padding: 20px 26px;
+    background: #1B1B1B;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.deleteIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.editIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.completedWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.completedtem {
+    padding: 20px 26px;
+    background: #1B1B1B;
+    border-radius: 8px;
+    width: 300px;
+    text-decoration: line-through;
+}

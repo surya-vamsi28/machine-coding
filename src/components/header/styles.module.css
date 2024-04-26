@@ -1,0 +1,20 @@
+.header {
+    height: 70px;
+    background-color: #1B1B1B;
+    position: fixed;
+    top: 0;
+    left : 0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.icon {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
