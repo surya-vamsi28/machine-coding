@@ -166,8 +166,8 @@ const TicTacToe = () => {
         ) : null}
         {gameStatus === "completed" ? (
           <div className={styles.progressWrapper}>
-            <div className={styles.playerText}>Winner</div>
-            <div className={styles.player}>{winner}</div>
+            <div className={styles.winnerText}>Winner</div>
+            <div className={styles.winner}>{winner}</div>
           </div>
         ) : null}
       </div>
