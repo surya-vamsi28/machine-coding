@@ -22,7 +22,7 @@ const Header = () => {
       setIsLoggedIn(false);
       window.localStorage.setItem("user", "");
     } else {
-        router.push('/login')
+      router.push("/login");
     }
   };
 
@@ -33,7 +33,7 @@ const Header = () => {
         <button className={styles.loginButton} onClick={loginHandler}>
           {isLoggedIn ? "Logout" : "Login"}
         </button>
-        <Link href="/" as="/">
+        <Link href="/" as="/" className={styles.anchor}>
           <Image src={homeIcon} alt="icon" className={styles.icon} />
         </Link>
       </div>

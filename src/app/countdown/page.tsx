@@ -66,19 +66,20 @@ const CountDown = () => {
       interval = setInterval(() => {
         console.log(seconds, minutes, hour);
         if (seconds === 0 && minutes === 0 && hour === 0) {
-          clearInterval(interval);
           setIsActive(false);
-        }
-        if (seconds === 0) {
-          if (minutes === 0) {
-            setHour((prevHours) => prevHours - 1);
-            setMinutes(59);
-          } else {
-            setMinutes((prev) => prev - 1);
-          }
-          setSeconds(59);
+          clearInterval(interval);
         } else {
-          setSeconds((prev) => prev - 1);
+          if (seconds === 0) {
+            if (minutes === 0) {
+              setHour((prevHours) => prevHours - 1);
+              setMinutes(59);
+            } else {
+              setMinutes((prev) => prev - 1);
+            }
+            setSeconds(59);
+          } else {
+            setSeconds((prev) => prev - 1);
+          }
         }
       }, 1000);
     } else {
@@ -97,7 +98,9 @@ const CountDown = () => {
         <button
           className={styles.startButton}
           onClick={() => {
-            setIsActive((prev) => !prev);
+            if (!(minutes === 0 && seconds === 0 && hour === 0)) {
+              setIsActive((prev) => !prev);
+            }
           }}
         >
           {isActive ? "Stop" : "Start"}

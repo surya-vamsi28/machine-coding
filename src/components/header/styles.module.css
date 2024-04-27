@@ -13,6 +13,12 @@
     font-weight: 700;
 }
 
+.anchor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .icon {
     cursor: pointer;
     height: 40px;
