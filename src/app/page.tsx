@@ -10,6 +10,7 @@ export default function Home() {
         <Card title={"ToDo List"} link={"/todolist"}/>
         <Card title={"Throttle"} link={"/throttle"}/>
         <Card title={"Tic Tac Toe"} link={"/tictactoe"}/>
+        <Card title={"Timer"} link={"/timer"}/>
       </div>
     </div>
   );

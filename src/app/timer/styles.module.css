@@ -1,0 +1,29 @@
+.pageWrapper {
+    margin: 70px 100px 0 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timerText{
+    margin-top: 100px;
+    font-size: 100px;
+}
+
+.buttonWrapper {
+    margin-top: 100px;
+    display: flex;
+    gap: 100px;
+}
+
+.startButton {
+    font-size: 20px;
+    padding: 15px 40px;
+    background-color: #EF4C01;
+    border: 2px solid #EF4C01;
+}
+
+.resetButton {
+    font-size: 20px;
+    padding: 15px 40px;
+}

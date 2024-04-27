@@ -12,7 +12,7 @@ const Card = (props: any) => {
       <div
         className={styles.cardContainer}
         onClick={() => {
-          router.push(props.link);
+          router.push(props.link, props.link);
         }}
       >
         <div className={styles.title}>{props.title}</div>
