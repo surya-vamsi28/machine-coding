@@ -11,6 +11,7 @@ export default function Home() {
         <Card title={"Throttle"} link={"/throttle"}/>
         <Card title={"Tic Tac Toe"} link={"/tictactoe"}/>
         <Card title={"Timer"} link={"/timer"}/>
+        <Card title={"CountDown"} link={"/countdown"}/>
       </div>
     </div>
   );

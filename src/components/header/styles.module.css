@@ -18,3 +18,16 @@
     height: 40px;
     width: 40px;
 }
+
+.buttonWrapper {
+    display: flex;
+    gap: 25px;
+}
+
+.loginButton {
+    font-size: 20px;
+    padding: 12px 30px;
+    background-color: transparent;
+    border: 2px solid #EF4C01;
+    border-radius: 4px;
+}

@@ -11,10 +11,9 @@
 }
 
 .buttonWrapper {
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     gap: 100px;
-    
 }
 
 .startButton {
@@ -29,4 +28,32 @@
     font-size: 20px;
     padding: 15px 40px;
     border-radius: 8px;
+}
+
+.optionWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    margin-top: 40px;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.optionTitle {
+    font-size: 30px;
+}
+
+.plus {
+    padding: 4px 30px;
+    border: 2px solid white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
