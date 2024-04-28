@@ -9,23 +9,19 @@ export const debounceMaker = (fn, waitTime) => {
 };
 
 export const throttleMaker = (func, limit) => {
-  let lastRan = null;
+  let firstRun = true;
+  let timeout
 
-  return function () {
-    const context = this;
-    const args = arguments;
-
-    if (!lastRan) {
-      func.apply(context, args);
-      lastRan = Date.now();
+  return (...args) => {
+    if (firstRun) {
+      func(...args);
+      firstRun = false;
     } else {
-      clearTimeout(lastTimeout);
-      lastTimeout = setTimeout(() => {
-        if (Date.now() - lastRan >= limit) {
-          func.apply(context, args);
-          lastRan = Date.now();
-        }
-      }, limit);
+      timeout = setTimeout(() => {
+        clearTimeout(timeout)
+        func(...args);
+        firstRun = true;
+      }, limit)
     }
   };
 };

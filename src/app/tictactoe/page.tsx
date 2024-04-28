@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
+import Modal from "@/components/model";
 
 const TicTacToe = () => {
   const displayArray = [
@@ -19,6 +20,7 @@ const TicTacToe = () => {
   const [currentPlay, setCurrentPlay] = useState<string>("X");
   const [gameplay, setGamePlay] = useState<string[][]>([...displayArray]);
   const [winner, setWinner] = useState<string>("X");
+  const [isModelOpen, setModelOpen] = useState<boolean>(false);
 
   const startButtonHandler = () => {
     setGameStatus("inProgress");
@@ -50,6 +52,7 @@ const TicTacToe = () => {
       if (result) {
         setWinner(result);
         setGameStatus("completed");
+        setModelOpen(true);
       }
     }
   }, [gameplay]);
@@ -122,6 +125,12 @@ const TicTacToe = () => {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.tableWrapper}>
+        <Modal isOpen={isModelOpen} onClose={() => setModelOpen(false)}>
+          <div className={styles.modalProgressWrapper}>
+            <div className={styles.winnerText}>Winner</div>
+            <div className={styles.winner}>{winner}</div>
+          </div>
+        </Modal>
         <div className={styles.rowWrapper}>
           {gameplay.map((row, rowIndex) => {
             return (
@@ -130,7 +139,7 @@ const TicTacToe = () => {
                   return (
                     <div
                       key={colIndex}
-                      className={styles.item}
+                      className={`${styles.item} ${col === "X" ? styles.xGrid : ""} `}
                       onClick={() => {
                         gridClick(rowIndex, colIndex);
                       }}

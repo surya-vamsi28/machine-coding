@@ -71,6 +71,17 @@
     align-items: center;
 }
 
+.modalProgressWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    color: #EF4C01;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
 .playerText {
     font-size: 25px;
     font-weight: 500;
@@ -90,5 +101,9 @@
 .winner {
     font-size: 125px;
     font-weight: 700;
+    color: #EF4C01;
+}
+
+.xGrid {
     color: #EF4C01;
 }
