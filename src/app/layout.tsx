@@ -5,11 +5,6 @@ import Header from "@/components/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Machine Coding",
-  description: "Machine Coding",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,10 +12,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
-      <body className={inter.className}>
-        <Header />
-        {children}</body>
+
+        <body className={inter.className}>
+          <Header />
+          {children}</body>
     </html>
   );
 }

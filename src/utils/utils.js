@@ -10,16 +10,11 @@ export const debounceMaker = (fn, waitTime) => {
 
 export const throttleMaker = (func, limit) => {
   let firstRun = true;
-  let timeout
-
   return (...args) => {
     if (firstRun) {
       func(...args);
       firstRun = false;
-    } else {
-      timeout = setTimeout(() => {
-        clearTimeout(timeout)
-        func(...args);
+      setTimeout(() => {
         firstRun = true;
       }, limit)
     }

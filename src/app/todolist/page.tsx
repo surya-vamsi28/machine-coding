@@ -95,7 +95,7 @@ const TodoList = () => {
           ))}
         </div>
         <div className={styles.completedWrapper}>
-          <div className={styles.completedTitle}>Done - 1</div>
+          <div className={styles.completedTitle}>{`Done - ${completedList.length}`}</div>
           {completedList.map((item, index) => (
             <div className={styles.remainingListItem} key={index}>
               <div className={styles.completedtem}>{item}</div>
