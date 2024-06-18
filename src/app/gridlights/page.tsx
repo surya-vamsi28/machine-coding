@@ -34,7 +34,7 @@ const GridLights = () => {
       {Array(3)
         .fill(0)
         .map((_, index1) => (
-          <div className={styles.rowWrapper}>
+          <div className={styles.rowWrapper} key={index1}>
             {Array(3)
               .fill(0)
               .map((_, index2) => {

@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from "./style.module.css";
 import CommentBox from "../../components/commentBox";
 
-const comments = () => {
+const Comments = () => {
   const [comments, setComments] = useState<any>([
     {
       value: "hello",
@@ -53,11 +53,11 @@ const comments = () => {
 
       <div className={styles.commentContainer}>
         {comments.map((comment: any) => (
-          <CommentBox {...comment} addReply={addReply} />
+          <CommentBox {...comment} addReply={addReply} key={comment.id}/>
         ))}
       </div>
     </div>
   );
 };
 
-export default comments;
+export default Comments;

@@ -36,7 +36,7 @@ const CommentBox = (props: any) => {
       )}
       <div className={styles.repliesContainer}>
         {props.replies.map((reply: any) => (
-          <CommentBox {...reply} addReply={props.addReply} />
+          <CommentBox {...reply} addReply={props.addReply} key={reply.id}/>
         ))}
       </div>
     </div>
