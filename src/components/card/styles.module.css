@@ -1,6 +1,6 @@
 .cardContainer {
-    width: 30%;
-    height: 250px;
+    width: 300px;
+    height: 100px;
     border: 2px solid #fff;
     border-radius: 8px;
     display: flex;
@@ -13,6 +13,11 @@
       #1B1B1B 40%
     );
     cursor: pointer;
+
+    @media only screen and (min-width: 1200px) {
+      width: 30%;
+      height: 250px;
+    }
 }
 
 .title {

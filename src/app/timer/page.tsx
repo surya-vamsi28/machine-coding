@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
+import Head from "next/head";
 
 const Timer = () => {
   const [hour, setHour] = useState<number>(0);
@@ -39,6 +40,7 @@ const Timer = () => {
     setMinutes(0);
     setSeconds(0);
   }
+
   return (
     <div className={styles.pageWrapper}>
       <div

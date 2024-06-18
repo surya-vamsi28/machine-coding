@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./style.module.css";
 import { debounceMaker } from "../../utils/utils";
+import Head from "next/head";
 
 let timeout: any;
 const Search = () => {

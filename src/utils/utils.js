@@ -30,3 +30,13 @@ export const removeElementFromArray = (array, index) => {
   }
   return arr;
 }
+
+export const removeItemFromArray = (array, item) => {
+  let arr = []
+  for (let i=0; i < array.length; i++) {
+    if (array[i] !== item) {
+      arr.push(array[i])
+    }
+  }
+  return arr;
+}

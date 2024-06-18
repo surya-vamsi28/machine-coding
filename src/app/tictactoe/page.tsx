@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import Modal from "@/components/model";
+import Head from "next/head";
 
 const TicTacToe = () => {
   const displayArray = [

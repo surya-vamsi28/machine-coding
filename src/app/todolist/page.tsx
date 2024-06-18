@@ -6,14 +6,15 @@ import editIcon from "../../../public/assests/whiteEditIcon.svg";
 import tickIcon from "../../../public/assests/tick.svg";
 import Image from "next/image";
 import { useState } from "react";
-import { removeElementFromArray } from "@/utils/utils";
+import { removeElementFromArray, removeItemFromArray } from "@/utils/utils";
+import Head from "next/head";
 
 const TodoList = () => {
   const [text, setText] = useState<string>("");
   const [pendingList, setPendingList] = useState<string[]>([
-    "added a list",
-    "added a list",
-    "added a list",
+    "added a list1",
+    "added a list2",
+    "added a list3",
   ]);
 
   const [completedList, setCompletedList] = useState<string[]>(["Completed"]);
@@ -44,6 +45,25 @@ const TodoList = () => {
     setCompletedList((prev) => [text, ...prev]);
   };
 
+  const onDragHandler = (e: any) => {
+    setPendingList((prev) => {
+      const tempArray = removeItemFromArray(prev, e.target.id);
+      console.log('!@#', prev, tempArray)
+      return tempArray;
+    });
+  };
+
+  const onDropHandler = (e: any) => {
+    console.log('!@# e', e)
+    setCompletedList((prev) => {
+      return [...prev, e.target.id]
+    })
+  }
+
+  const dragStart = (event: any) => {
+    event.dataTransfer.setData("Text", event.target.id);
+  }
+
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.todoWrapper}>
@@ -69,7 +89,15 @@ const TodoList = () => {
 
           {pendingList.map((item, index) => (
             <div className={styles.remainingListItem} key={index}>
-              <div className={styles.remainingItem}>{item}</div>
+              <div
+                className={styles.remainingItem}
+                // draggable={true}
+                // onDragStart={dragStart}
+                // onDragEnd={onDragHandler}
+                id={item}
+              >
+                {item}
+              </div>
 
               <Image
                 src={tickIcon}
@@ -94,10 +122,12 @@ const TodoList = () => {
             </div>
           ))}
         </div>
-        <div className={styles.completedWrapper}>
-          <div className={styles.completedTitle}>{`Done - ${completedList.length}`}</div>
+        <div className={styles.completedWrapper} >
+          <div
+            className={styles.completedTitle}
+          >{`Done - ${completedList.length}`}</div>
           {completedList.map((item, index) => (
-            <div className={styles.remainingListItem} key={index}>
+            <div className={styles.remainingListItem} key={index} >
               <div className={styles.completedtem}>{item}</div>
             </div>
           ))}

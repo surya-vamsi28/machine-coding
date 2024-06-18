@@ -12,4 +12,11 @@
   flex-wrap: wrap;
   width: 100%;
   gap: 20px;
+  justify-content: center;
+}
+
+.bodyWrapper {
+  margin-top: 70px;
+  width: 100%;
+  height: 100%;
 }

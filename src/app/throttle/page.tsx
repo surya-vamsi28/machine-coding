@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import styles from "./style.module.css";
 import { throttleMaker } from "../../utils/utils";
+import Head from "next/head";
 
 const Search = () => {
   const [clicked, setClicked] = useState<string[]>([]);

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
+import Head from "next/head";
 
 const CountDown = () => {
   const [hour, setHour] = useState<number>(0);
