@@ -1,0 +1,31 @@
+.commentContainer {
+  display: flex;
+  height: 30px;
+  background-color: gray;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 10px;
+}
+
+.repliesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+  margin-left: 25px;
+}
+
+.button {
+  height: 25px;
+  background-color: white;
+  color: black;
+  width: 50px;
+}
+
+.commentInput {
+  width: 300px;
+  height: 30px;
+  font-size: 18px;
+  margin-left: 25px;
+  margin-top: 10px;
+}
