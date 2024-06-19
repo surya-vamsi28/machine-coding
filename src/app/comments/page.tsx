@@ -22,6 +22,7 @@ const Comments = () => {
         ...comments,
         { value: e.target.value, replies: [], id: Date.now() },
       ]);
+      e.target.value = ''
     }
   };
 
