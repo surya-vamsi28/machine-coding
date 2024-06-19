@@ -14,6 +14,7 @@ export default function Home() {
         <Card title={"CountDown"} link={"/countdown"}/>
         <Card title={"Comments"} link={"/comments"}/>
         <Card title={"Grid Lights"} link={"/gridlights"}/>
+        <Card title={"File System"} link={"/filesystem"}/>
       </div>
     </div>
   );

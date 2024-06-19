@@ -1,0 +1,40 @@
+.fileName  {
+     font-size: 18px;
+     width: fit-content;
+     cursor: pointer;
+}
+
+.filesWrapper {
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+     margin-left: 15px;
+}
+
+.folderWrapper {
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+}
+
+.detailsWrapper{
+     display: flex;
+     gap:20px;
+}
+
+.buttonWrapper {
+     display: flex;
+  gap: 20px;
+}
+
+.button {
+     background-color: white;
+     color: black;
+     display: flex;
+     border-radius: 5px;
+     width: auto;
+     justify-content: center;
+     padding: 4px 8px;
+     align-items: center;
+     cursor: pointer;
+   }
