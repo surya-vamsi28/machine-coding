@@ -1,10 +1,14 @@
 .commentContainer {
   display: flex;
-  height: 30px;
   background-color: gray;
   justify-content: space-between;
   align-items: center;
   padding: 2px 10px;
+  height: 50px;
+  border-radius: 12px;
+  width: fit-content;
+  min-width: 250px;
+  gap: 40px;
 }
 
 .repliesContainer {
@@ -19,7 +23,13 @@
   height: 25px;
   background-color: white;
   color: black;
-  width: 50px;
+  display: flex;
+  border-radius: 5px;
+  width: auto;
+  justify-content: center;
+  padding: 4px 8px;
+  align-items: center;
+  cursor: pointer;
 }
 
 .commentInput {
@@ -28,4 +38,9 @@
   font-size: 18px;
   margin-left: 25px;
   margin-top: 10px;
+}
+
+.buttomWrapper {
+  display: flex;
+  gap: 20px;
 }

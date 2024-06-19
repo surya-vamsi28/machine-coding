@@ -7,10 +7,10 @@ import CommentBox from "../../components/commentBox";
 const Comments = () => {
   const [comments, setComments] = useState<any>([
     {
-      value: "hello",
+      value: "This is good",
       replies: [
-        { value: "hello reply1", replies: [], id: 2 },
-        { value: "hello reply2", replies: [], id: 3 },
+        { value: "Nice", replies: [], id: 2 },
+        { value: "Nice 2", replies: [], id: 3 },
       ],
       id: 1,
     },
@@ -25,7 +25,21 @@ const Comments = () => {
     }
   };
 
-  const addReplyHandler = (
+  const addComment = (commentArray: any[], parentId: any, value: string) => {
+    return commentArray.map((comment: any) => {
+      if (comment.id === parentId) {
+        return {
+          ...comment,
+          replies: [...comment.replies, { value, replies: [], id: Date.now() }],
+        };
+      } else {
+        comment.replies = addComment(comment.replies, parentId, value);
+        return { ...comment };
+      }
+    });
+  };
+
+  const updateCommentHandler = (
     commentArray: any[],
     parentId: any,
     value: string
@@ -34,26 +48,41 @@ const Comments = () => {
       if (comment.id === parentId) {
         return {
           ...comment,
-          replies: [...comment.replies, { value, replies: [], id: Date.now() }],
+          value,
         };
       } else {
-        comment.replies = addReplyHandler(comment.replies, parentId, value);
+        comment.replies = updateCommentHandler(
+          comment.replies,
+          parentId,
+          value
+        );
         return { ...comment };
       }
     });
   };
 
   const addReply = (parentId: any, value: string) => {
-    const result = addReplyHandler(comments, parentId, value);
+    const result = addComment(comments, parentId, value);
     setComments(result);
   };
+
+  const updateComment = (parentId: any, value: string) => {
+    const result = updateCommentHandler(comments, parentId, value);
+    setComments(result);
+  };
+
   return (
     <div className={styles.pageWrapper}>
       <input type="text" onKeyDown={handleInput} className={styles.mainInput} />
 
       <div className={styles.commentContainer}>
         {comments.map((comment: any) => (
-          <CommentBox {...comment} addReply={addReply} key={comment.id}/>
+          <CommentBox
+            {...comment}
+            addReply={addReply}
+            key={comment.id}
+            updateComment={updateComment}
+          />
         ))}
       </div>
     </div>

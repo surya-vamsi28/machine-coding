@@ -15,13 +15,26 @@ const CommentBox = (props: any) => {
     }
   };
 
+  const handlePrompt = () => {
+    const input = window.prompt('Please enter the updated Comment:', props.value);
+    if (input !== null) {
+      props.updateComment(props.id, input)
+    }
+  };
+
   return (
     <div>
       <div className={styles.commentContainer}>
         <div>{props.value}</div>
-        <button className={styles.button} onClick={handleReply}>
+        <div className={styles.buttomWrapper}>
+        <div className={styles.button} onClick={handleReply}>
           Reply
-        </button>
+        </div>
+        <div className={styles.button} onClick={handlePrompt}>
+          Update
+        </div>
+        </div>
+        
       </div>
       {showInput && (
         <input
@@ -36,7 +49,7 @@ const CommentBox = (props: any) => {
       )}
       <div className={styles.repliesContainer}>
         {props.replies.map((reply: any) => (
-          <CommentBox {...reply} addReply={props.addReply} key={reply.id}/>
+          <CommentBox {...reply} addReply={props.addReply} key={reply.id} updateComment={props.updateComment}/>
         ))}
       </div>
     </div>
